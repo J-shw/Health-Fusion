@@ -1,0 +1,15 @@
+nav {
+    padding: 10px;
+    background-color: var(--foreground);
+}
+
+nav img {
+    width: 30px;
+}
+
+logo {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: large;
+}
