@@ -1,8 +1,15 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 import os
 
-
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://myuser:mypassword@db:5432/health_fusion'
+db = SQLAlchemy(app)
+
+import models # Import models.py
+
+with app.app_context():
+    db.create_all()
 
 @app.route('/')
 def index():
@@ -21,4 +28,4 @@ def process_data():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, port=8080, host='0.0.0.0')
