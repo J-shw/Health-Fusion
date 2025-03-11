@@ -7,6 +7,7 @@ services:
       POSTGRES_DB: health_fusion
     ports:
       - "5432:5432"
+    restart: unless-stopped
     volumes:
       - ./data/db:/var/lib/postgresql/data/
   web:
@@ -17,6 +18,7 @@ services:
       - "8080:8080"
     volumes:
       - ./data/web:/app/data
+    restart: unless-stopped
     depends_on:
       - db
 volumes:
