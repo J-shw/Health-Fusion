@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data" action="/process_data" id="pdfForm">
+    <div>
+        <label for="pdf_file" class="custom-file-upload" id="file_name">Choose File</label>
+        <input id="pdf_file" type="file" name="pdf_file" accept=".pdf" style="display:none;">
+        <input id="upload-btn" type="submit" value="Upload">
+    </div>  
+    <input id="pdf_file_password" type="text" name="pdf_file_password" placeholder="PDF password">
+</form>
+{% endblock %}
