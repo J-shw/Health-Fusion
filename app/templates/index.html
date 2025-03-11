@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
+{% include "nav.html" %}
 <form method="POST" enctype="multipart/form-data" action="/process_data" id="pdfForm">
     <div>
         <label for="pdf_file" class="custom-file-upload" id="file_name">Choose File</label>
